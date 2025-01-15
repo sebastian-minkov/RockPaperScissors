@@ -4,6 +4,9 @@ rock = "rock"
 paper = "paper"
 scissors = "scissors"
 
+player_score = 0
+computer_score = 0
+
 game_on = "y"
 
 while game_on == "y":
@@ -35,9 +38,14 @@ while game_on == "y":
             (player_move == paper and computer_move == rock) or \
             (player_move == scissors and computer_move == paper):
         print("\033[0;32m" + "You win!")
+        player_score += 1
     elif player_move == computer_move:
         print("\033[1;33m" + "Draw!")
     else:
         print("\033[0;31m" + "You lose!")
+        computer_score += 1
 
-    game_on = input("\033[0m" + "Type [y]es to play again or any key to quit: ")
+    print("\033[0m")
+    print(f"Current score: Player - {player_score} / Computer - {computer_score}")
+
+    game_on = input("Type [y]es to play again or any key to quit: ")
