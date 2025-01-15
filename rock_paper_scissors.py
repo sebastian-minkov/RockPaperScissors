@@ -30,8 +30,8 @@ print(f"The computer chose {computer_move}.")
 if (player_move == rock and computer_move == scissors) or \
         (player_move == paper and computer_move == rock) or \
         (player_move == scissors and computer_move == paper):
-    print("You win!")
+    print("\033[0;32m" + "You win!")
 elif player_move == computer_move:
-    print("Draw!")
+    print("\033[1;33m" + "Draw!")
 else:
-    print("You lose!")
+    print("\033[0;31m" + "You lose!")
